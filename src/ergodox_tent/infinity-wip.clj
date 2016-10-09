@@ -17,7 +17,7 @@
 (def total-width (+ rect-width (* 2 curve-radius)))
 (def total-depth (+ rect-depth (* 2 curve-radius)))
 
-(def slope (/ Math/PI 12))
+(def slope (/ Math/PI 12)) ;pi/(rise/run) = 12 ; I measure the rise as 2.105cm and the run as 8.1cm; which comes out to 12.088. maybe?
 
 (def screw-radius (/ 11.63 2)); 1/8" 0.6mm diameter
 (def nut-radius 11.63)
@@ -37,26 +37,22 @@
                (translate [(/ rect-width 2) (/ rect-depth -2) 0] (cylinder curve-radius rect-height))
               )
    )
-   (->> nut-hole
+   (->> nut-hole                                       ; corner hole (calling that top right)
         (translate [(+ (/ rect-width 2) 4)
                     (+ (/ rect-depth 2) 4 3.225)
                     0]))
-   (->> nut-hole
-        (translate [(+ (/ rect-width 2) 4  10)
-                    (+ (/ rect-depth 2) 4 -251.575001)
+   (->> nut-hole                                       ; upper tine
+        (translate [(+ (/ rect-width 2) 4 -205)        ; left/right down/up the tine
+                    (+ (/ rect-depth 2) 4 5)           ; up and down
                     0]))
-   (->> nut-hole
-        (translate [(+ (/ rect-width 2) 4 -207.767) ; left/right down/up the tine
-                    (+ (/ rect-depth 2) 4 3.225)    ; up and down
-                    0]))
-   (->> nut-hole
-        (translate [(+ (/ rect-width 2) 4  -211.310)
+   (->> nut-hole                                       ; span hole (not on a tine)
+        (translate [(+ (/ rect-width 2) 4  15)
+                    (+ (/ rect-depth 2) 4 -250)
+                    345]))
+   (->> nut-hole                                       ; lower tine
+        (translate [(+ (/ rect-width 2) 4  -229.027)
                     (+ (/ rect-depth 2) 4 -395)
                     0]))
-;    (->> nut-hole
-;        (translate [(+ (/ rect-width 2) 4 -241.465)
-;                    (+ (/ rect-depth 2) 4 -452.55)
-;                     0]))
 ))
 
 
