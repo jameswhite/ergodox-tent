@@ -39,11 +39,19 @@
    )
    (->> nut-hole
         (translate [(+ (/ rect-width 2) 4)
-                    (+ (/ rect-depth 2) 4)
+                    (+ (/ rect-depth 2) 4 3.225)
                     0]))
    (->> nut-hole
-        (translate [(+ (/ rect-width 2) 4 -186.508)
-                    (+ (/ rect-depth 2) 4 6.45); up and down
+        (translate [(+ (/ rect-width 2) 4  10)
+                    (+ (/ rect-depth 2) 4 -251.575001)
+                    0]))
+   (->> nut-hole
+        (translate [(+ (/ rect-width 2) 4 -207.767) ; left/right down/up the tine
+                    (+ (/ rect-depth 2) 4 3.225)    ; up and down
+                    0]))
+   (->> nut-hole
+        (translate [(+ (/ rect-width 2) 4  -211.310)
+                    (+ (/ rect-depth 2) 4 -395)
                     0]))
 ;    (->> nut-hole
 ;        (translate [(+ (/ rect-width 2) 4 -241.465)
@@ -63,7 +71,7 @@
 (def flush-top
   (->> (union main-base (translate [0 0 -100] main-base))
        (rotate (- slope) [0 1 0])
-       ;(translate [0 0 (- shift-down-height)])
+       (translate [0 0 (- shift-down-height)])
   )
 )
 
