@@ -46,11 +46,11 @@
                     (+ (/ rect-depth 2) 4 5)           ; up and down
                     0]))
    (->> nut-hole                                       ; span hole (not on a tine)
-        (translate [(+ (/ rect-width 2) 4  15)
-                    (+ (/ rect-depth 2) 4 -250)
+        (translate [(+ (/ rect-width 2) 4  16.772)
+                    (+ (/ rect-depth 2) 4 -248.228)
                     0]))                               ; use 345 here for a notch instead of a hole
    (->> nut-hole                                       ; lower tine
-        (translate [(+ (/ rect-width 2) 4  -229.027)
+        (translate [(+ (/ rect-width 2) 4  -223.712)
                     (+ (/ rect-depth 2) 4 -395)
                     0]))
 ))
