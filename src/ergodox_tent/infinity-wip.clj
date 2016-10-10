@@ -40,19 +40,19 @@
    (->> nut-hole                                       ; corner hole (calling that top right)
         (translate [(+ (/ rect-width 2) 4)
                     (+ (/ rect-depth 2) 4 3.225)
-                    0]))
+                    345]))
    (->> nut-hole                                       ; upper tine
         (translate [(+ (/ rect-width 2) 4 -205)        ; left/right down/up the tine
                     (+ (/ rect-depth 2) 4 5)           ; up and down
-                    0]))
+                    345]))
    (->> nut-hole                                       ; span hole (not on a tine)
-        (translate [(+ (/ rect-width 2) 4  16.772)
-                    (+ (/ rect-depth 2) 4 -248.228)
-                    0]))                               ; use 345 here for a notch instead of a hole
+        (translate [(+ (/ rect-width 2) 4  15.603)  ; more negative a hair
+                    (+ (/ rect-depth 2) 4 -247.059) ; more positive a hair
+                    345]))                               ; use 345 here for a notch instead of a hole
    (->> nut-hole                                       ; lower tine
         (translate [(+ (/ rect-width 2) 4  -223.712)
                     (+ (/ rect-depth 2) 4 -395)
-                    0]))
+                    345]))
 ))
 
 
@@ -86,7 +86,7 @@
       (write-scad
        (union
         tent
-        ;(->> tent (mirror [1 0 0]) (translate [50 (- 20) 0])) ; the other one.
+        (->> tent (mirror [1 0 0]) (translate [50 (- 20) 0])) ; the other one.
        )
       )
 )
